@@ -34,8 +34,7 @@ class SMZDM_Bot(object):
         1.判断是否 json 形式
         """
         try:
-            result = msg.json()
-            print(result)
+            msg.json()
             return True
         except Exception as e:
             print(f'Error : {e}')
@@ -67,5 +66,7 @@ if __name__ == '__main__':
     cookies = data['cookies']
     sb.load_cookie_str(cookies)
     res = sb.checkin()
-    print(res)
-    print('签到执行完毕')
+    if(res['error_code'] != '0'):
+        print(res['error_msg']+"请确认cookie是否正确！")
+    else:
+        print('签到执行完毕')
