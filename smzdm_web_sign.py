@@ -1,8 +1,14 @@
-"""
-什么值得买自动签到脚本
-使用github actions 定时执行
-@author : stark
-"""
+# !/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Time    : 2021/11/9
+# @Author  : Fitch
+# @File    : smzdm_web_sign.py
+# @Software: PyCharm
+
+'''
+cron:  0 6 * * * smzdm_web_sign.py
+new Env('什么值得买web签到');
+'''
 import requests,os
 
 class SMZDM_Bot(object):
