@@ -9,7 +9,7 @@
 cron:  0 6 * * * smzdm_web_sign.py
 new Env('什么值得买web签到');
 '''
-import requests,os
+import requests,os,json
 
 class SMZDM_Bot(object):
     def __init__(self):
@@ -61,8 +61,10 @@ class SMZDM_Bot(object):
 
 if __name__ == '__main__':
     sb = SMZDM_Bot()
+    with open("./smzdm_cookie.json", "r") as json_file:
+        data = json.load(json_file)
 	# 换成自己的cookie
-    cookies = "Cookie: XXX"
+    cookies = data['cookies']
     sb.load_cookie_str(cookies)
     res = sb.checkin()
     print(res)
