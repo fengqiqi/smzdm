@@ -60,10 +60,11 @@ class SMZDM_Bot(object):
 
 if __name__ == '__main__':
     sb = SMZDM_Bot()
-    with open("./smzdm_cookie.json", "r", encoding='UTF-8') as json_file:
-        data = json.load(json_file)
-    cookies = data['cookies']
-    sb.load_cookie_str(cookies)
+    with open("./smzdm_cookie.json", "r", encoding='UTF-8') as f:
+        datas = f.read()
+        datas = json.loads(datas.encode('UTF-8').decode('latin-1'))
+    cookie = datas['cookie']
+    sb.load_cookie_str(cookie)
     res = sb.checkin()
     if(res['error_code'] != '0'):
         print(res['error_msg'])
