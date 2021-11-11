@@ -1,6 +1,3 @@
-# smzdm_auto_script
-自动脚本
-
 ## 什么值得买自动签到脚本 （"smzdm_" 开头的脚本）
 ## 1、什么值得买web端cookie获取方法
 + 首先使用chrome浏览器，访问[什么值得买官网](https://www.smzdm.com/)， 登陆账号
@@ -8,7 +5,7 @@
 + 选择开发者工具Network，刷新页面 ,选择第一个`www.smzdm.com`, 找到`Requests Headers`里的`Cookie`。
 
 ## 2、什么值得买web端cookie获取方法
-+ 替换 smzdm_cookie.json文件 cookies = "Cookie: XXX" 为自己的Cookie
++ 替换 smzdm_cookie.json文件 cookie = "Cookie: XXX" 为自己的Cookie
 
 ## 免责声明
 - 本仓库发布的任何脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断.
