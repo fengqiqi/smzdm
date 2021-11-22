@@ -9,7 +9,7 @@
 cron:  0 6 * * * smzdm_web_sign.py
 new Env('什么值得买web签到');
 '''
-import requests,os,json,logging
+import requests,os,json
 
 class SMZDM_Bot(object):
     def __init__(self):
@@ -37,7 +37,7 @@ class SMZDM_Bot(object):
             result=msg.json()
             return True
         except Exception as e:
-            logging.info(f'Error : {e}')
+            print(f'Error : {e}')
             return False
 
     """
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     sb.load_cookie_str(cookie)
     res = sb.checkin()
     if(res['error_code'] != '0'):
-        logging.info(res['error_msg'])
+        print(res['error_msg'])
     else:
-        logging.info('签到执行完毕')
-    logging.info('返回信息:', res)
+        print('签到执行完毕')
+    print('返回信息:', res)
